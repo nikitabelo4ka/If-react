@@ -1,0 +1,29 @@
+.homes-guests-loves {
+    background-color: #eaf0f9;
+    padding-top: 120px;
+}
+
+.homes-guests-loves-container {
+    width: 1440px;
+    margin: 0 auto;
+}
+
+.homes-guests-loves-label {
+    display: flex;
+    justify-content: center;
+}
+
+.homes-guests-loves-label-name {
+    font-weight: 500;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.homes-guests-loves-elements {
+    width: 1257px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 105px auto 0;
+    position: relative;
+}

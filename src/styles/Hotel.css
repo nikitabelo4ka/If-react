@@ -1,0 +1,29 @@
+.homes-guests-loves-element {
+    margin-bottom: 120px;
+}
+
+.hotel-icon {
+    width: 296px;
+    height: 296px;
+    display: block;
+    margin: 0 auto;
+}
+
+.hotel-link {
+    font-size: 24px;
+    text-decoration: none;
+    color: #3077c6;
+    display: flex;
+    margin: 24px auto 0;
+    justify-content: flex-start;
+    width: 296px;
+}
+
+.hotel-location {
+    font-size: 24px;
+    color: #bfbfbf;
+    margin: 24px auto 0;
+    display: flex;
+    justify-content: flex-start;
+    width: 296px;
+}
