@@ -1,7 +1,3 @@
-import '../styles/App.css';
-import Hotel from './Hotel';
-import Arrow from './Arrow';
-
 const data = [
   {
     id: '71ce9eac-e9b9-44f0-a342-9ff0b565f3b7',
@@ -69,20 +65,4 @@ const data = [
   },
 ];
 
-function App() {
-  return (
-    <div className="homes-guests-loves-container col-m-12 col-s-12">
-      <div className="homes-guests-loves-label">
-        <h2 className="homes-guests-loves-label-name">Homes guests loves</h2>
-      </div>
-      <div id="homes-guests-loves" className="homes-guests-loves-elements col-m-12 col-s-12">
-        <Arrow />
-        {data.map((hotel) => (
-          <Hotel key={hotel.id} data={hotel} />
-        ))}
-      </div>
-    </div>
-  );
-}
-
-export default App;
+export default data;

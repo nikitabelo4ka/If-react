@@ -5,7 +5,7 @@ import IconsSVG from '../images/sprite.svg';
 function Arrow() {
   return (
     <svg className="arrow">
-      <use xlinkHref={`${IconsSVG}#arrow`}/>
+      <use xlinkHref={`${IconsSVG}#arrow`} />
     </svg>
   );
 }
