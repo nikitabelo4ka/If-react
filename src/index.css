@@ -7,6 +7,11 @@ body {
 }
 
 @media screen and (min-width: 1440px) {
+
+    .menu-icon {
+        display: none;
+    }
+
     .col-1 {
         width: 8.33%;
     }

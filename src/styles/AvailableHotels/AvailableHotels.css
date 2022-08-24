@@ -1,14 +1,14 @@
-.homes-guests-loves {
+.available-hotels {
     background-color: #eaf0f9;
     padding-top: 120px;
 }
 
-.homes-guests-loves-container {
+.available-hotels-container {
     width: 1440px;
     margin: 0 auto;
 }
 
-.homes-guests-loves-elements {
+.available-hotels-elements {
     width: 1257px;
     display: flex;
     flex-wrap: wrap;

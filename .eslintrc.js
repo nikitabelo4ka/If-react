@@ -5,6 +5,8 @@ module.exports = {
         node: true,
     },
     rules: {
+        'max-len': 'off',
+        'no-alert': 'off',
         'no-shadow': 'off',
         'no-unused-vars': 'off',
         'jest/no-deprecated-functions': 'off',
