@@ -1,0 +1,10 @@
+.filtres {
+    width: 259px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 22px 0 10px 0;
+    margin: 12px 0 0 776px;
+}
+

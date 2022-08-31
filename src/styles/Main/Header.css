@@ -1,0 +1,17 @@
+.header {
+    margin: 0 auto 0;
+    width: 1232px;
+    height: 46px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 205px;
+    height: 40px;
+}
+
+.logo-icon {
+    width: 205px;
+    height: 40px;
+}

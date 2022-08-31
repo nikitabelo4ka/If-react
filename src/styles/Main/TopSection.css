@@ -1,0 +1,163 @@
+.main_title {
+    font-weight: 500;
+    font-size: 50px;
+    color: #ffffff;
+    margin: 202px 0 145px 104px;
+}
+
+.booking-area {
+    margin: 0 auto;
+    max-width: 1232px;
+    height: 64px;
+    background-color: #ffffff;
+    border: 3px solid #f3f3f4;
+    border-radius: 8px;
+}
+
+input {
+    margin: 0;
+    border: 0;
+    height: 57px;
+    border-radius: 8px;
+    padding-left: 10px;
+    font-size: 18px;
+}
+
+label {
+    position: absolute;
+    color: #383838;
+    font-size: 18px;
+    transition: 0.2s ease all;
+}
+
+.row-form {
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.destination-wrap {
+    height: 64px;
+    width: 36%;
+    margin-top: -3px;
+    margin-left: -3px;
+}
+
+.destination {
+    height: 64px;
+    width: 100%;
+    outline: none;
+}
+
+.destination:focus {
+    border: 3px solid #f5bd41;
+}
+
+.destination-label {
+    left: 24px;
+    top: 20px;
+}
+
+input:focus ~  .destination-label,
+input:not(:focus):valid ~ .destination-label {
+    top: -48px;
+    left: 24px;
+    color: #ffffff;
+    opacity: 1;
+}
+
+.date-in-out-wrap {
+    height: 64px;
+    width: 22%;
+    display: flex;
+    border-radius: 8px;
+    margin-top: -3px;
+}
+
+.date-in-label, .date-out-label {
+    left: 24px;
+    top: -41px;
+    width: 50%;
+    position: relative;
+}
+
+.date-in, .date-out {
+    outline: none;
+    width: 100%;
+    max-width: 115px;
+    height: 64px;
+}
+
+input:focus ~ .date-in-label,
+input:not(:focus):valid ~ .date-in-label{
+    top: -98px;
+    left: 24px;
+    color: #ffffff;
+    opacity: 1;
+}
+
+input:focus ~ .date-out-label,
+input:not(:focus):valid ~ .date-out-label{
+    top: -98px;
+    left: 24px;
+    color: #ffffff;
+    opacity: 1;
+}
+
+.date-in:focus, .date-out:focus {
+    border: 3px solid #f5bd41;
+}
+
+.people-room {
+    height: 64px;
+    margin-top: -3px;
+    outline: none;
+    width: 27%;
+}
+
+.people-room:focus {
+    border: 3px solid #f5bd41;
+}
+
+.people-room-active {
+    border: 3px solid #f5bd41;
+}
+
+.search-icon {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    display: none;
+}
+
+.search {
+    background-color: #3077c6;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    width: 16%;
+    height: 64px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    color: #ffffff;
+    margin-block-start: -3px;
+    margin-inline-end: -4px;
+}
+
+.applications-icons {
+    display: flex;
+    margin: 121px 0 120px 585px;
+}
+
+.google-play-picture {
+    width: 135px;
+    height: 40px;
+}
+
+.apple-picture {
+    margin-left: 17px;
+    width: 118px;
+    height: 38.5px;
+}

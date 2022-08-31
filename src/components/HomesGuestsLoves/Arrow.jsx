@@ -1,6 +1,6 @@
 import React from 'react';
-import '../styles/Arrow.css';
-import IconsSVG from '../images/sprite.svg';
+import '../../styles/HomesGuestsLoves/Arrow.css';
+import IconsSVG from '../../images/sprite.svg';
 
 function Arrow() {
   return (

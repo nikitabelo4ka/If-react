@@ -1,0 +1,89 @@
+.right-header-content {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.links {
+    font-size: 24px;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 48px;
+    width: 203px;
+    height: 30px;
+}
+
+.stays {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.stays:hover::after {
+    opacity: 1;
+}
+
+.stays::after {
+    transition: all 0.5s ease-out;
+    opacity: 0;
+    margin: 8px 0 0 4px;
+    display: block;
+    content: "";
+    background-color: #f5bd41;
+    width: 50px;
+    height: 4px;
+}
+
+.attractions {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.attractions:hover::after {
+    opacity: 1;
+}
+
+.attractions::after {
+    transition: all 0.5s ease-out;
+    opacity: 0;
+    margin: 8px 0 0 4px;
+    display: block;
+    content: "";
+    background-color: #f5bd41;
+    width: 112px;
+    height: 4px;
+}
+
+.right-header-content-icons {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 40px;
+}
+
+.night-icon-link:hover .night-icon {
+    fill: #f5bd41;
+}
+
+.menu-icon-link:hover .menu-icon {
+    fill: #f5bd41;
+}
+
+.account-icon-link:hover .account-icon {
+    fill: #f5bd41;
+}
+
+.menu-icon {
+    transition: fill 0.5s ease-out;
+    fill: #ffffff;
+    margin-left: 16px;
+}
+
+.night-icon {
+    transition: fill 0.5s ease-out;
+    fill: #ffffff;
+    margin-right: 24px;
+}
+
+.account-icon {
+    transition: fill 0.5s ease-out;
+    fill: #ffffff;
+}
