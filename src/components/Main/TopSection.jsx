@@ -7,10 +7,6 @@ import googlePlay from '../../images/google-play.png';
 function TopSection(props) {
   const [foundHotels, setFoundHotels] = useState([]);
 
-  function updateData(value) {
-    setFoundHotels(value);
-  }
-
   useEffect(() => {
     props.updateData(foundHotels);
   }, [foundHotels]);
@@ -21,7 +17,7 @@ function TopSection(props) {
         Discover stays <br />
         to live, work or just relax
       </h1>
-      <BookingArea updateData={updateData} />
+      <BookingArea updateData={(value) => setFoundHotels(value)} />
       <div className="applications-icons col-3 col-m-4 col-s-12">
         <div className="google-play">
           <img className="google-play-picture" src={googlePlay} alt="google-play" />

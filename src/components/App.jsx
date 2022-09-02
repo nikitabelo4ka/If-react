@@ -6,13 +6,9 @@ import AvailableHotels from '../containers/AvailableHotels.jsx';
 function App() {
   const [foundHotels, setFoundHotels] = useState([]);
 
-  function updateData(value) {
-    setFoundHotels(value);
-  }
-
   return (
     <div>
-      <Main updateData={updateData} />
+      <Main updateData={(value) => setFoundHotels(value)} />
       <AvailableHotels foundHotels={foundHotels} />
       <HomesGuestsLoves />
     </div>
