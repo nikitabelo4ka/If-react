@@ -5,11 +5,12 @@ import AvailableHotels from '../containers/AvailableHotels.jsx';
 
 function App() {
   const [foundHotels, setFoundHotels] = useState([]);
+  const [isAvailableHotelsActive, setIsAvailableHotelsActive] = useState(false);
 
   return (
     <div>
-      <Main updateData={(value) => setFoundHotels(value)} />
-      <AvailableHotels foundHotels={foundHotels} />
+      <Main updateData={(value, isActive) => { setFoundHotels(value); setIsAvailableHotelsActive(isActive); }} />
+      <AvailableHotels foundHotels={foundHotels} isActive={isAvailableHotelsActive} />
       <HomesGuestsLoves />
     </div>
   );

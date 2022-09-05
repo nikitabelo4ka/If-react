@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/Hotel.css';
+import '../../assets/styles/Hotel.css';
 
 function Hotel(props) {
   return (

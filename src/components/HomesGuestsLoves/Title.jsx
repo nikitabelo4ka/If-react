@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/HomesGuestsLoves/Title.css';
+import '../../assets/styles/HomesGuestsLoves/Title.css';
 
 function Title(props) {
   return (

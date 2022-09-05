@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/Main/HeaderNavigation.css';
+import '../../assets/styles/Main/HeaderNavigation.css';
 
 function HeaderNavigation() {
   return (

@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import BookingArea from './BookingArea.jsx';
-import '../../styles/Main/TopSection.css';
-import appStore from '../../images/app-store.png';
-import googlePlay from '../../images/google-play.png';
+import '../../assets/styles/Main/TopSection.css';
+import appStore from '../../assets/images/app-store.png';
+import googlePlay from '../../assets/images/google-play.png';
 
 function TopSection(props) {
   const [foundHotels, setFoundHotels] = useState([]);
+  const [isAvailableHotelsActive, setIsAvailableHotelsActive] = useState(false);
 
   useEffect(() => {
-    props.updateData(foundHotels);
-  }, [foundHotels]);
+    props.updateData(foundHotels, isAvailableHotelsActive);
+  }, [foundHotels, isAvailableHotelsActive]);
 
   return (
     <div>
@@ -17,7 +18,7 @@ function TopSection(props) {
         Discover stays <br />
         to live, work or just relax
       </h1>
-      <BookingArea updateData={(value) => setFoundHotels(value)} />
+      <BookingArea updateData={(value, isActive) => { setFoundHotels(value); setIsAvailableHotelsActive(isActive); }} />
       <div className="applications-icons col-3 col-m-4 col-s-12">
         <div className="google-play">
           <img className="google-play-picture" src={googlePlay} alt="google-play" />

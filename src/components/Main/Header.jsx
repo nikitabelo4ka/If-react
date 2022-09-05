@@ -1,7 +1,7 @@
 import React from 'react';
 import HeaderNavigation from './HeaderNavigation.jsx';
-import '../../styles/Main/Header.css';
-import IconsSVG from '../../images/sprite.svg';
+import '../../assets/styles/Main/Header.css';
+import IconsSVG from '../../assets/images/sprite.svg';
 
 function Header() {
   return (

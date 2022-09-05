@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Hotel from '../components/HomesGuestsLoves/Hotel.jsx';
 import Arrow from '../components/HomesGuestsLoves/Arrow.jsx';
 import Title from '../components/HomesGuestsLoves/Title.jsx';
-import '../styles/HomesGuestsLoves/HomesGuestsLoves.css';
+import '../assets/styles/HomesGuestsLoves/HomesGuestsLoves.css';
 import { API, PATH } from '../constans/data';
 
 function HomesGuestsLoves() {

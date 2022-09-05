@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import IconsSVG from '../../images/sprite.svg';
+import React, { useState, useCallback } from 'react';
+import IconsSVG from '../../assets/images/sprite.svg';
 import FiltersWrap from './FiltersWrap.jsx';
 import { API, PATH_SEARCH } from '../../constans/data';
 
@@ -7,23 +7,27 @@ function BookingArea(props) {
   const [destinationValue, setDestinationValue] = useState('');
   const [dateInType, setDateInType] = useState('text');
   const [dateOutType, setDateOutType] = useState('text');
+  let isAvailableHotelsActive = false;
 
-  function searchHotels(event) {
-    event.preventDefault();
-    const availableHotelsWrap = document.getElementsByClassName('available-hotels')[0];
-    fetch(`${API}/${PATH_SEARCH}=${destinationValue}`)
-      .then((response) => response.json())
-      .then((result) => {
-        if (result.length === 0) {
-          availableHotelsWrap.classList.add('unactive');
-          alert('Nothing was found for your query');
+  const searchHotels = useCallback(
+    (event) => {
+      event.preventDefault();
+      fetch(`${API}/${PATH_SEARCH}=${destinationValue}`)
+        .then((response) => response.json())
+        .then((result) => {
+          if (result.length === 0) {
+            isAvailableHotelsActive = false;
+            props.updateData(result, isAvailableHotelsActive);
+            alert('Nothing was found for your query');
 
-          return;
-        }
-        availableHotelsWrap.classList.remove('unactive');
-        props.updateData(result);
-      });
-  }
+            return;
+          }
+          isAvailableHotelsActive = true;
+          props.updateData(result, isAvailableHotelsActive);
+        });
+    },
+    [destinationValue, isAvailableHotelsActive]
+  );
 
   return (
     <div className="booking-area col-m-11 col-s-11">
