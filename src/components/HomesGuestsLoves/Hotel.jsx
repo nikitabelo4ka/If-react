@@ -1,15 +1,15 @@
 import React from 'react';
 import '../../assets/styles/Hotel.css';
 
-function Hotel(props) {
+function Hotel({ data }) {
   return (
     <div className="hotels-element col-m-6 col-3">
-      <img className="hotels-icon" src={props.data.imageUrl} alt={`${props.data.name}`} />
+      <img className="hotels-icon" src={data.imageUrl} alt={`${data.name}`} />
       <a className="hotels-link" href="#">
-        {props.data.name}
+        {data.name}
       </a>
       <p className="hotels-location">
-        {props.data.city}, {props.data.country}
+        {data.city}, {data.country}
       </p>
     </div>
   );

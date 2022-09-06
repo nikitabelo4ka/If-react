@@ -1,10 +1,10 @@
 import React from 'react';
 import '../../assets/styles/HomesGuestsLoves/Title.css';
 
-function Title(props) {
+function Title({ title }) {
   return (
     <div className="label">
-      <h2 className="label-name">{props.title}</h2>
+      <h2 className="label-name">{title}</h2>
     </div>
   );
 }

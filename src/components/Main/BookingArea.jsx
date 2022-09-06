@@ -3,11 +3,10 @@ import IconsSVG from '../../assets/images/sprite.svg';
 import FiltersWrap from './FiltersWrap.jsx';
 import { API, PATH_SEARCH } from '../../constans/data';
 
-function BookingArea(props) {
+function BookingArea({ updateData }) {
   const [destinationValue, setDestinationValue] = useState('');
   const [dateInType, setDateInType] = useState('text');
   const [dateOutType, setDateOutType] = useState('text');
-  let isAvailableHotelsActive = false;
 
   const searchHotels = useCallback(
     (event) => {
@@ -16,17 +15,15 @@ function BookingArea(props) {
         .then((response) => response.json())
         .then((result) => {
           if (result.length === 0) {
-            isAvailableHotelsActive = false;
-            props.updateData(result, isAvailableHotelsActive);
             alert('Nothing was found for your query');
+            updateData(result);
 
             return;
           }
-          isAvailableHotelsActive = true;
-          props.updateData(result, isAvailableHotelsActive);
+          updateData(result);
         });
     },
-    [destinationValue, isAvailableHotelsActive]
+    [destinationValue]
   );
 
   return (
