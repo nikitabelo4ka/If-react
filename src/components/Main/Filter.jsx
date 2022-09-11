@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/Main/Filter.css';
+import '../../assets/styles/Main/Filter.css';
 
 function Filter(props) {
   const label = props.for[0].toUpperCase() + props.for.slice(1);

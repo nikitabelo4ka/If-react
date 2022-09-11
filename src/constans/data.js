@@ -66,3 +66,11 @@ const data = [
 ];
 
 export default data;
+
+const API = 'https://fe-student-api.herokuapp.com/api';
+
+const PATH = 'hotels/popular';
+
+const PATH_SEARCH = 'hotels?search'
+
+export {API, PATH, PATH_SEARCH};

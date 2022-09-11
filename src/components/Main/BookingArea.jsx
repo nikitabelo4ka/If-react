@@ -1,49 +1,30 @@
-import React, { useState } from 'react';
-import IconsSVG from '../../images/sprite.svg';
+import React, { useState, useCallback } from 'react';
+import IconsSVG from '../../assets/images/sprite.svg';
 import FiltersWrap from './FiltersWrap.jsx';
-import data from '../../constans/data';
+import { API, PATH_SEARCH } from '../../constans/data';
 
-let hotelsExist = false;
-
-function BookingArea(props) {
+function BookingArea({ updateData }) {
   const [destinationValue, setDestinationValue] = useState('');
   const [dateInType, setDateInType] = useState('text');
   const [dateOutType, setDateOutType] = useState('text');
 
-  function makeStartState(hotelsExist) {
-    if (hotelsExist) {
-      const availableHotelsWrap = document.getElementsByClassName('available-hotels')[0];
-      const oldAvailableHotels = document.getElementById('available-hotels');
-      oldAvailableHotels.parentNode.removeChild(oldAvailableHotels);
-      const newAvailableHotels = document.createElement('div');
-      newAvailableHotels.className = 'available-hotels-elements col-m-12 col-s-12';
-      newAvailableHotels.id = 'available-hotels';
-      availableHotelsWrap.appendChild(newAvailableHotels);
-    }
-    return false;
-  }
+  const searchHotels = useCallback(
+    (event) => {
+      event.preventDefault();
+      fetch(`${API}/${PATH_SEARCH}=${destinationValue}`)
+        .then((response) => response.json())
+        .then((result) => {
+          if (result.length === 0) {
+            alert('Nothing was found for your query');
+            updateData(result);
 
-  function search(str) {
-    return data.filter((object) => [object.country.toLowerCase(), object.city.toLowerCase(), object.name.toLowerCase()].includes(str.toLowerCase()));
-  }
-
-  function searchHotels(event) {
-    event.preventDefault();
-    const searchResult = search(destinationValue);
-    const availableHotelsWrap = document.getElementsByClassName('available-hotels')[0];
-    if (searchResult.length === 0) {
-      availableHotelsWrap.classList.add('unactive');
-      hotelsExist = makeStartState(hotelsExist);
-      alert('Nothing was found for your query');
-
-      return;
-    }
-    availableHotelsWrap.classList.remove('unactive');
-
-    hotelsExist = makeStartState(hotelsExist);
-
-    props.updateData(searchResult);
-  }
+            return;
+          }
+          updateData(result);
+        });
+    },
+    [destinationValue]
+  );
 
   return (
     <div className="booking-area col-m-11 col-s-11">

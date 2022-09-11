@@ -1,20 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import BookingArea from './BookingArea.jsx';
-import '../../styles/Main/TopSection.css';
-import appStore from '../../images/app-store.png';
-import googlePlay from '../../images/google-play.png';
+import '../../assets/styles/Main/TopSection.css';
+import appStore from '../../assets/images/app-store.png';
+import googlePlay from '../../assets/images/google-play.png';
 
-function TopSection(props) {
-  const [foundHotels, setFoundHotels] = useState([]);
-
-  function updateData(value) {
-    setFoundHotels(value);
-  }
-
-  useEffect(() => {
-    props.updateData(foundHotels);
-  }, [foundHotels]);
-
+function TopSection({ updateData }) {
   return (
     <div>
       <h1 className="main_title col-m-11 col-6">

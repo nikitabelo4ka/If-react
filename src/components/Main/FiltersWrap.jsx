@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/Main/FiltersWrap.css';
+import '../../assets/styles/Main/FiltersWrap.css';
 import Filter from './Filter.jsx';
 
 function FiltersWrap() {

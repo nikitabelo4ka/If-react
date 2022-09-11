@@ -1,6 +1,6 @@
 import React from 'react';
-import '../../styles/HomesGuestsLoves/Arrow.css';
-import IconsSVG from '../../images/sprite.svg';
+import '../../assets/styles/HomesGuestsLoves/Arrow.css';
+import IconsSVG from '../../assets/images/sprite.svg';
 
 function Arrow() {
   return (

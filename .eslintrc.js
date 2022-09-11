@@ -5,6 +5,7 @@ module.exports = {
         node: true,
     },
     rules: {
+        'comma-dangle': 'off',
         'max-len': 'off',
         'no-alert': 'off',
         'no-shadow': 'off',
