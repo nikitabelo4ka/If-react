@@ -74,12 +74,12 @@ input:not(:focus):valid ~ .destination-label {
     margin-top: -3px;
 }
 
-.date-in-label, .date-out-label {
-    left: 24px;
-    top: -41px;
-    width: 50%;
-    position: relative;
-}
+/*.date-in-label, .date-out-label {*/
+/*    left: 24px;*/
+/*    top: -41px;*/
+/*    width: 50%;*/
+/*    position: relative;*/
+/*}*/
 
 .date-in, .date-out {
     outline: none;
@@ -88,21 +88,21 @@ input:not(:focus):valid ~ .destination-label {
     height: 64px;
 }
 
-input:focus ~ .date-in-label,
-input:not(:focus):valid ~ .date-in-label{
-    top: -98px;
-    left: 24px;
-    color: #ffffff;
-    opacity: 1;
-}
+/*.date-in:focus ~ .date-in-label,*/
+/*.date-in:not(:focus):valid ~ .date-in-label{*/
+/*    top: -98px;*/
+/*    left: 24px;*/
+/*    color: #ffffff;*/
+/*    opacity: 1;*/
+/*}*/
 
-input:focus ~ .date-out-label,
-input:not(:focus):valid ~ .date-out-label{
-    top: -98px;
-    left: 24px;
-    color: #ffffff;
-    opacity: 1;
-}
+/*input:focus ~ .date-out-label,*/
+/*input:not(:focus):valid ~ .date-out-label{*/
+/*    top: -98px;*/
+/*    left: 24px;*/
+/*    color: #ffffff;*/
+/*    opacity: 1;*/
+/*}*/
 
 .date-in:focus, .date-out:focus {
     border: 3px solid #f5bd41;

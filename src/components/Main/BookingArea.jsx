@@ -1,30 +1,32 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 import IconsSVG from '../../assets/images/sprite.svg';
 import FiltersWrap from './FiltersWrap.jsx';
 import { API, PATH_SEARCH } from '../../constans/data';
 
-function BookingArea({ updateData }) {
+function BookingArea({ updateData, changeFilterState, isFilterActive }) {
   const [destinationValue, setDestinationValue] = useState('');
-  const [dateInType, setDateInType] = useState('text');
-  const [dateOutType, setDateOutType] = useState('text');
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
+  const [numberOfAdults, setNumberOfAdults] = useState(1);
+  const [numberOfChildren, setNumberOfChildren] = useState(0);
+  const [numberOfRooms, setNumberOfRooms] = useState(1);
 
-  const searchHotels = useCallback(
-    (event) => {
-      event.preventDefault();
-      fetch(`${API}/${PATH_SEARCH}=${destinationValue}`)
-        .then((response) => response.json())
-        .then((result) => {
-          if (result.length === 0) {
-            alert('Nothing was found for your query');
-            updateData(result);
-
-            return;
-          }
+  function searchHotels(event) {
+    event.preventDefault();
+    fetch(`${API}/${PATH_SEARCH}=${destinationValue}`)
+      .then((response) => response.json())
+      .then((result) => {
+        if (result.length === 0) {
+          alert('Nothing was found for your query');
           updateData(result);
-        });
-    },
-    [destinationValue]
-  );
+
+          return;
+        }
+        updateData(result);
+      });
+  }
 
   return (
     <div className="booking-area col-m-11 col-s-11">
@@ -58,48 +60,61 @@ function BookingArea({ updateData }) {
           </div>
           <div className="date-in-out-wrap">
             <div className="date-in-wrap">
-              <input
-                onFocus={() => setDateInType('date')}
-                onBlur={() => setDateInType('text')}
+              <DatePicker
+                selected={startDate}
+                onChange={(date) => setStartDate(date)}
+                minDate={new Date()}
+                showDisabledMonthNavigation
                 className="date-in col-s-12"
-                type={dateInType}
-                name="date-in"
                 id="date-in"
+                name="date-in"
+                autoComplete="off"
+                placeholderText="Check-in"
                 required
               />
-              <label className="date-in-label col-m-10 col-s-11" htmlFor="date-in">
-                Check-in
-              </label>
             </div>
             <div className="date-out-wrap">
-              <input
-                onFocus={() => setDateOutType('date')}
-                onBlur={() => setDateOutType('text')}
+              <DatePicker
+                selected={endDate}
+                onChange={(date) => setEndDate(date)}
+                minDate={startDate}
+                showDisabledMonthNavigation
                 className="date-out col-s-12"
                 id="date-out"
-                name="date-out"
-                type={dateOutType}
+                name="date-in"
+                autoComplete="off"
+                placeholderText="Check-out"
                 required
               />
-              <label className="date-out-label col-m-9 col-s-11" htmlFor="date-out">
-                Check-out
-              </label>
             </div>
           </div>
           <input
-            className="people-room col-s-12"
+            onClick={(event) => {
+              event.stopPropagation();
+              changeFilterState(true);
+            }}
+            className={
+              isFilterActive ? 'people-room col-s-12 people-room-active' : 'people-room col-s-12'
+            }
             autoComplete="off"
             id="people-room"
             name="people-room"
             type="text"
             required
-            defaultValue="1 Adults &#8212; 0 Children &#8212; 1 Rooms"
+            readOnly
+            value={`${numberOfAdults} Adults — ${numberOfChildren} Children — ${numberOfRooms} Rooms`}
           />
           <button type="submit" value="Search" className="search col-s-12" id="search">
             Search
           </button>
         </div>
-        <FiltersWrap />
+        <FiltersWrap
+          isFilterActive={isFilterActive}
+          changeFilterState={changeFilterState}
+          updateLabelAdults={(value) => setNumberOfAdults(value)}
+          updateLabelChildren={(value) => setNumberOfChildren(value)}
+          updateLabelRooms={(value) => setNumberOfRooms(value)}
+        />
       </form>
     </div>
   );
