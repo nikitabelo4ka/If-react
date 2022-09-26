@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Title from '../components/HomesGuestsLoves/Title.jsx';
 import '../assets/styles/AvailableHotels/AvailableHotels.css';
 import Hotel from '../components/HomesGuestsLoves/Hotel.jsx';
@@ -10,7 +11,9 @@ function AvailableHotels({ foundHotels }) {
         <Title title="Available Hotels" />
         <div id="available-hotels" className="available-hotels-elements col-m-12 col-s-12">
           {foundHotels.map((hotel) => (
-            <Hotel key={hotel.id} data={hotel} />
+            <Link key={hotel.id} to={`hotels/${hotel.id}`}>
+              <Hotel key={hotel.id} data={hotel} />
+            </Link>
           ))}
         </div>
       </div>

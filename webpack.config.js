@@ -7,10 +7,13 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: "bundle[hash].js",
         chunkFilename: "[id].js",
-        publicPath: ""
+        publicPath: "/"
     },
     resolve: {
         extensions: ['.js', '.jsx']
+    },
+    devServer: {
+        historyApiFallback: true,
     },
     module: {
         rules: [
