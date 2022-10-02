@@ -15,3 +15,8 @@
     margin: 105px auto 0;
     position: relative;
 }
+
+a:-webkit-any-link {
+    text-decoration: none;
+    margin: 0 auto;
+}

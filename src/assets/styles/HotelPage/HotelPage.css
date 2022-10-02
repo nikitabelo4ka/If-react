@@ -1,0 +1,30 @@
+.hotel-page-header {
+    padding: 30px 0;
+}
+
+.hotel-page-element {
+    margin: 120px 0;
+    width: 100%;
+}
+
+.hotel-page-icon {
+    margin-left: 340px;
+    width: 350px;
+    height: 350px;
+}
+
+.hotel-page-link {
+    position: absolute;
+    top: 250px;
+    left: 780px;
+    font-size: 30px;
+    font-weight: 500;
+    color: #3077c6;
+}
+
+.hotel-page-location {
+    position: absolute;
+    top:325px;
+    left: 782px;
+    font-size: 20px;
+    color: #bfbfbf;}

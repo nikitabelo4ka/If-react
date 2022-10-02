@@ -5,9 +5,7 @@ function Hotel({ data }) {
   return (
     <div className="hotels-element col-m-6 col-3">
       <img className="hotels-icon" src={data.imageUrl} alt={`${data.name}`} />
-      <a className="hotels-link" href="#">
-        {data.name}
-      </a>
+      <p className="hotels-link">{data.name}</p>
       <p className="hotels-location">
         {data.city}, {data.country}
       </p>

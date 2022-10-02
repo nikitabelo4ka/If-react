@@ -1,21 +1,31 @@
 import React, { useState } from 'react';
-import HomesGuestsLoves from '../containers/HomesGuestsLoves.jsx';
-import Main from '../containers/Main.jsx';
-import AvailableHotels from '../containers/AvailableHotels.jsx';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import Layout from './Layout.jsx';
+import MainPageContent from './MainPageContent.jsx';
+import HotelPage from './Main/HotelPage.jsx';
 
 function App() {
-  const [foundHotels, setFoundHotels] = useState([]);
   const [isFilterActive, setIsFilterActive] = useState(false);
 
   return (
     <div onClick={() => setIsFilterActive(false)}>
-      <Main
-        updateData={(value) => setFoundHotels(value)}
-        changeFilterState={(value) => setIsFilterActive(value)}
-        isFilterActive={isFilterActive}
-      />
-      <AvailableHotels foundHotels={foundHotels} />
-      <HomesGuestsLoves />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route
+              index
+              element={
+                <MainPageContent
+                  changeFilterState={(value) => setIsFilterActive(value)}
+                  isFilterActive={isFilterActive}
+                />
+              }
+            />
+            <Route path="hotels/:id" element={<HotelPage />} />
+          </Route>
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
