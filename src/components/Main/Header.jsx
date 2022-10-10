@@ -3,7 +3,7 @@ import HeaderNavigation from './HeaderNavigation.jsx';
 import '../../assets/styles/Main/Header.css';
 import IconsSVG from '../../assets/images/sprite.svg';
 
-function Header() {
+function Header({ changeSingOutState, isSingOutActive }) {
   return (
     <div className="header col-m-10 col-s-12">
       <div className="logo col-2 col-s-5">
@@ -13,7 +13,7 @@ function Header() {
           </svg>
         </a>
       </div>
-      <HeaderNavigation />
+      <HeaderNavigation changeSingOutState={changeSingOutState} isSingOutActive={isSingOutActive} />
     </div>
   );
 }

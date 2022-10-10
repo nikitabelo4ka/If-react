@@ -1,18 +1,13 @@
 .right-header-content {
     display: flex;
     justify-content: flex-end;
-}
-
-.links {
-    font-size: 24px;
-    display: flex;
-    justify-content: space-between;
-    margin-right: 48px;
-    width: 203px;
-    height: 30px;
+    width: 347px;
+    margin-left: 684px;
+    flex-wrap: wrap;
 }
 
 .stays {
+    font-size: 24px;
     color: #ffffff;
     text-decoration: none;
 }
@@ -33,6 +28,7 @@
 }
 
 .attractions {
+    font-size: 24px;
     color: #ffffff;
     text-decoration: none;
 }
@@ -53,6 +49,7 @@
 }
 
 .right-header-content-icons {
+    margin-left: 48px;
     justify-content: center;
     align-items: center;
     display: flex;

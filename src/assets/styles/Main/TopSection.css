@@ -1,8 +1,27 @@
+* {
+    box-sizing: border-box;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    background-position: top center;
+    background-repeat: no-repeat;
+    min-height: calc(100vh - 142px);
+    width: 100%;
+    background-size: cover;
+}
+
+.main-container {
+    margin: 0 auto;
+    width: 1440px;
+}
+
 .main_title {
     font-weight: 500;
     font-size: 50px;
     color: #ffffff;
-    margin: 202px 0 145px 104px;
+    margin: 135px 0 145px 104px;
 }
 
 .booking-area {

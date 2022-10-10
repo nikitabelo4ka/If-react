@@ -1,0 +1,62 @@
+.sign-in-form {
+    width: 400px;
+    height: 364px;
+    background-color: #ffffff;
+    padding-top: 36px;
+    margin: 140px auto 244px;
+}
+
+.sign-in-label {
+    font-size: 24px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+}
+
+.sign-in-email-wrap {
+    margin: 40px auto 0;
+    width: 320px;
+}
+
+.sign-in-password-wrap {
+    margin: 16px auto 0;
+    width: 320px;
+}
+
+.sign-in-email-label, .sign-in-password-label {
+    font-size: 16px;
+    color: #333333;
+}
+
+.sign-in-email-input, .sign-in-password-input {
+    height: 41px;
+    width: 320px;
+    margin-top: 27px;
+    border: 2px solid #CECECE;
+}
+
+.sign-in-email-input:focus-visible, .sign-in-password-input:focus-visible {
+    outline: none;
+}
+
+.sign-in-email-input:focus, .sign-in-password-input:focus {
+    border: 3px solid #F5BD41;
+}
+
+.sign-in-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    padding: 0;
+    margin: 24px auto 0;
+    width: 320px;
+    height: 48px;
+    background-color: #3077C6;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+}
