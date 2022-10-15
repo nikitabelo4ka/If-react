@@ -33,7 +33,7 @@ function Footer() {
             <ListItem name="FAQ" />
           </ul>
         </div>
-        <p className="signature col-s-12">&#169; 2020 Triphous, Inc. All rights reserved</p>
+        <p className="signature col-s-12">&#169; 2022 Triphous, Inc. All rights reserved</p>
       </div>
     </div>
   );
